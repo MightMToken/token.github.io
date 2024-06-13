@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web App</title>
+</head>
+<body>
+    <h1>Hello, Telegram!</h1>
+    <p id="username"></p>
+
+    <script>
+        // Ensure the Telegram Web Apps library is loaded
+        if (window.Telegram.WebApp) {
+            let tg = window.Telegram.WebApp;
+
+            // Display the user's name
+            document.getElementById('username').innerText = `Hello, ${tg.initDataUnsafe.user.first_name}!`;
+
+            tg.ready(); // Inform Telegram that the web app is ready
+        }
+    </script>
+</body>
+</html>
